@@ -124,16 +124,4 @@ body {
     #name { font-size: 1.3em; margin-bottom: 15px; }
     .btn { width: 90%; font-size: 1em; padding: 10px; }
     #saveContact { width: 45px; height: 45px; font-size: 0.7em; }
-}        text-align: center;
-    }
-
-    .avatar {
-        width: 120px;
-        height: 120px;
-    }
-
-    .btn {
-        font-size: 0.95em;
-        padding: 10px;
-    }
 }
