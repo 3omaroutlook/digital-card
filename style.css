@@ -1,55 +1,126 @@
+/* ===== General ===== */
 body {
     margin: 0;
-    font-family: Arial;
-    background: #f2f2f2;
+    font-family: Arial, sans-serif;
     text-align: center;
+    color: #333;
+
+    /* Gradient Background */
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* بنفسجي → أزرق */
+    min-height: 100vh;
 }
 
-/* Splash Screen */
+/* ===== Splash Screen ===== */
 #splash {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
     width: 100%;
     height: 100%;
     background: white;
-
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 10;
 }
 
-.hidden {
-    display: none;
-}
-
-/* Card Design */
+/* ===== Main Card ===== */
 .card {
     max-width: 400px;
     margin: 40px auto;
-    background: white;
     padding: 20px;
+    background: white;
     border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* ===== Logo ===== */
 .logo {
-    width: 120px;
-    margin-bottom: 10px;
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+/* ===== Profile ===== */
+.profile-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
 }
 
 .avatar {
-    width: 120px;
-    border-radius: 50%;
-    margin: 10px 0;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px; /* Square with slight rounding */
 }
 
+/* ===== Name & Phone ===== */
+.name-phone {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.name-phone h2 {
+    margin: 0;
+    font-size: 1.3em;
+}
+
+.name-phone p {
+    margin: 5px 0 0 0;
+    font-size: 1em;
+    color: #555;
+}
+
+/* ===== Buttons ===== */
 .btn {
     display: block;
+    width: 100%;
     padding: 12px;
     margin: 10px 0;
     background: #007bff;
     color: white;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-size: 1em;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 500px) {
+    .card {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .name-phone {
+        align-items: center;
+        text-align: center;
+    }
+
+    .avatar {
+        width: 120px;
+        height: 120px;
+    }
+
+    .btn {
+        font-size: 0.95em;
+        padding: 10px;
+    }
 }
