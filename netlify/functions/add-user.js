@@ -1,7 +1,8 @@
 const { Client } = require('pg');
 
 exports.handler = async function(event, context) {
-    if(event.httpMethod !== 'POST') return { statusCode: 405, body: 'Method Not Allowed' };
+    if(event.httpMethod !== 'POST') 
+        return { statusCode: 405, body: 'Method Not Allowed' };
 
     const user = JSON.parse(event.body);
 
@@ -15,7 +16,11 @@ exports.handler = async function(event, context) {
         DO UPDATE SET name=$2,phone=$3,email=$4,instagram=$5,whatsapp=$6,image=$7
     `;
 
-    await client.query(query, [user.username,user.name,user.phone,user.email,user.instagram,user.whatsapp,user.image]);
+    await client.query(query, [
+        user.username, user.name, user.phone, user.email, 
+        user.instagram, user.whatsapp, user.image
+    ]);
+
     await client.end();
 
     return { statusCode: 200, body: JSON.stringify({message:'User added/updated successfully'}) };
