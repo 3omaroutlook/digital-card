@@ -4,42 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin Panel</title>
-<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div class="card" style="max-width: 600px; margin: 30px auto; text-align:left;">
-    <h2>Admin Panel</h2>
-
-    <form id="userForm">
-        <label>Username:</label>
-        <input type="text" id="userKey" required>
-
-        <label>Name:</label>
-        <input type="text" id="name" required>
-
-        <label>Phone:</label>
-        <input type="text" id="phone" required>
-
-        <label>Email:</label>
-        <input type="email" id="email" required>
-
-        <label>Instagram:</label>
-        <input type="text" id="instagram" required>
-
-        <label>WhatsApp:</label>
-        <input type="text" id="whatsapp" required>
-
-        <label>Profile Image URL:</label>
-        <input type="text" id="image" required placeholder="profile.jpg">
-
-        <button type="submit" class="btn">Add / Update User</button>
-    </form>
-
-    <h3>Output JSON (optional backup):</h3>
-    <textarea id="output" rows="10" style="width:100%;"></textarea>
-</div>
-
+<h2>Admin Panel</h2>
+<form id="userForm">
+  <input type="text" id="userKey" placeholder="Username" required/><br/>
+  <input type="text" id="name" placeholder="Full Name" required/><br/>
+  <input type="text" id="phone" placeholder="Phone"/><br/>
+  <input type="email" id="email" placeholder="Email"/><br/>
+  <input type="text" id="instagram" placeholder="Instagram"/><br/>
+  <input type="text" id="whatsapp" placeholder="WhatsApp"/><br/>
+  <input type="text" id="image" placeholder="Profile Image URL"/><br/>
+  <button type="submit">Add / Update User</button>
+</form>
 <script src="admin.js"></script>
 </body>
 </html>
