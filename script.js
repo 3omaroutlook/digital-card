@@ -1,55 +1,44 @@
-function hideSplash() {
-    document.getElementById("splash").style.display = "none";
-    document.getElementById("content").classList.remove("hidden");
-}
-
 fetch("data.json")
 .then(res => res.json())
 .then(data => {
 
     document.getElementById("name").innerText = data.name;
 
-    document.getElementById("phone").href = "tel:" + data.phone;
+    document.getElementById("phone").innerText = data.phone;
 
-    document.getElementById("whatsapp").href =
-        "https://wa.me/" + data.whatsapp;
-
-    document.getElementById("email").href =
+    document.getElementById("mail").href =
         "mailto:" + data.email;
 
     document.getElementById("instagram").href =
         "https://instagram.com/" + data.instagram;
 
-    document.getElementById("saveContact").addEventListener("click", function() {
-        downloadVCard(data);
-    });
+    document.getElementById("whatsapp").href =
+        "https://wa.me/2" + data.phone;
 
-    setTimeout(hideSplash, 1000);
-
-})
-.catch(err => {
-    console.log("Error loading data", err);
+    document.getElementById("profileImage").src =
+        data.image;
 });
 
+function addContact() {
 
-function downloadVCard(data) {
-
-    let vcard =
-`BEGIN:VCARD
+    const vCardData = `
+BEGIN:VCARD
 VERSION:3.0
-FN:${data.name}
-TEL:${data.phone}
-EMAIL:${data.email}
-URL:https://instagram.com/${data.instagram}
-END:VCARD`;
+FN:Omar Kamal Sayed Othman
+TEL;TYPE=CELL:01065890653
+EMAIL:omarkamal.othman@outlook.com
+URL:https://instagram.com/omar_kamal_8898
+END:VCARD
+`;
 
-    let blob = new Blob([vcard], { type: "text/vcard" });
-    let url = URL.createObjectURL(blob);
+    const blob = new Blob([vCardData], { type: 'text/vcard' });
 
-    let a = document.createElement("a");
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
     a.href = url;
-    a.download = data.name + ".vcf";
-    document.body.appendChild(a);
+    a.download = 'Omar_Kamal.vcf';
     a.click();
-    document.body.removeChild(a);
+
+    URL.revokeObjectURL(url);
 }
