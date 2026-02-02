@@ -1,95 +1,110 @@
 body {
     margin: 0;
-    padding: 0;
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #1e3c72, #2a5298);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.glass-card {
+.card {
     width: 90%;
     max-width: 380px;
-    text-align: center;
-    padding: 20px;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+
     border-radius: 20px;
+    padding: 25px;
 
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
+    text-align: center;
+    color: white;
 
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-
-    animation: fadeIn 1s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-.profile-img {
+.profile {
     width: 120px;
     height: 120px;
+
     border-radius: 50%;
     object-fit: cover;
+
+    border: 3px solid white;
+
     margin-bottom: 10px;
 }
 
-h2 {
-    color: white;
-    margin: 5px;
+.name {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px 0 5px 0;
 }
 
-#phone {
-    color: #e0e0e0;
+.phone {
+    font-size: 16px;
+    opacity: 0.8;
     margin-bottom: 15px;
-}
-
-.buttons {
-    margin-top: 15px;
 }
 
 .btn {
     display: block;
+
+    width: 100%;
     padding: 12px;
+
     margin: 10px 0;
+
     border-radius: 12px;
-    text-decoration: none;
-    text-align: center;
+    border: none;
+
+    background: rgba(255, 255, 255, 0.25);
+
     color: white;
-    font-weight: bold;
+    font-size: 16px;
 
-    backdrop-filter: blur(10px);
-    background: rgba(255,255,255,0.15);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-
+    cursor: pointer;
     transition: 0.3s;
+
+    text-decoration: none;
 }
 
 .btn:hover {
-    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.4);
 }
+
+/* زر Add Contact الدائري */
 
 .add-contact {
     position: fixed;
     bottom: 20px;
     right: 20px;
 
-    padding: 10px 15px;
-    border-radius: 10px;
+    width: 60px;
+    height: 60px;
 
+    border-radius: 50%;
     border: none;
-    background: #fff;
-    color: #333;
+
+    background: white;
+    color: #2a5298;
+
+    font-size: 36px;
     font-weight: bold;
 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+
+    transition: transform 0.2s;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.add-contact:hover {
+    transform: scale(1.15);
 }
