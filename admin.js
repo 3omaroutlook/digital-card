@@ -14,7 +14,7 @@ form.addEventListener("submit", async function(e) {
         image: document.getElementById("image").value.trim()
     };
 
-    // Output JSON للنسخ اليدوي
+    // عرض JSON احتياطي في Textarea
     let currentData;
     try { currentData = JSON.parse(output.value || '{}'); }
     catch { currentData = {}; }
@@ -22,11 +22,12 @@ form.addEventListener("submit", async function(e) {
     currentData[payload.username] = payload;
     output.value = JSON.stringify(currentData, null, 2);
 
-    // إرسال للـ API
+    // إرسال البيانات للـ API مباشرة للقاعدة
     const res = await fetch('/.netlify/functions/add-user', {
         method: 'POST',
         body: JSON.stringify(payload)
     });
+
     const data = await res.json();
     alert(data.message);
 });
