@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omar Kamal</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Card</title>
+
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <div class="glass-card">
 
-    <img src="profile.jpg" class="avatar" alt="Profile">
+    <img id="profileImage" class="profile-img" src="profile.jpg">
 
-    <h2>Omar Kamal Sayed Othman</h2>
-    <p class="subtitle">IT Specialist & Tech Enthusiast</p>
+    <h2 id="name">Loading...</h2>
+    <p id="phone"></p>
 
     <div class="buttons">
-        <a href="tel:01065890653" class="btn">Call Me</a>
-        <a href="mailto:omarkamal.othman@outlook.com" class="btn">Email</a>
-        <a href="https://instagram.com/omar_kamal_8898" class="btn">Instagram</a>
+
+        <a id="whatsapp" class="btn">WhatsApp</a>
+
+        <a id="mail" class="btn">Email</a>
+
+        <a id="instagram" class="btn">Instagram</a>
+
     </div>
+
+    <button class="add-contact" onclick="addContact()">
+        Add Contact
+    </button>
 
 </div>
 
-<!-- Floating Add Contact -->
-<a id="addContact" href="#">+</a>
+<script src="script.js"></script>
 
 </body>
 </html>
