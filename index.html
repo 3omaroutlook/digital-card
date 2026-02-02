@@ -3,30 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Digital Card</title>
-
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div class="card">
+    <img class="profile" id="profileImage" src="" alt="Profile">
+    <div class="name" id="name"></div>
+    <div class="phone" id="phone"></div>
 
-    <img class="profile" src="profile.jpg" alt="Profile">
-
-    <div class="name">Omar Kamal Sayed Othman</div>
-    <div class="phone">01065890653</div>
-
-    <a class="btn" href="https://wa.me/201065890653">WhatsApp</a>
-    <a class="btn" href="mailto:omarkamal.othman@outlook.com">Email</a>
-    <a class="btn" href="https://instagram.com/omar_kamal_8898">Instagram</a>
-
+    <div class="links">
+        <a class="btn" id="whatsapp">WhatsApp</a>
+        <a class="btn" id="email">Email</a>
+        <a class="btn" id="instagram">Instagram</a>
+    </div>
 </div>
 
 <button class="add-contact" onclick="addContact()">+</button>
 
 <script src="script.js"></script>
-
 </body>
 </html>
