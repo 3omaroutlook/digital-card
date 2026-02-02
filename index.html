@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Digital Card</title>
 
 <link rel="stylesheet" href="style.css">
@@ -10,28 +11,20 @@
 
 <body>
 
-<div class="glass-card">
+<div class="card">
 
-    <img id="profileImage" class="profile-img" src="profile.jpg">
+    <img class="profile" src="profile.jpg" alt="Profile">
 
-    <h2 id="name">Loading...</h2>
-    <p id="phone"></p>
+    <div class="name">Omar Kamal Sayed Othman</div>
+    <div class="phone">01065890653</div>
 
-    <div class="buttons">
-
-        <a id="whatsapp" class="btn">WhatsApp</a>
-
-        <a id="mail" class="btn">Email</a>
-
-        <a id="instagram" class="btn">Instagram</a>
-
-    </div>
-
-    <button class="add-contact" onclick="addContact()">
-        Add Contact
-    </button>
+    <a class="btn" href="https://wa.me/201065890653">WhatsApp</a>
+    <a class="btn" href="mailto:omarkamal.othman@outlook.com">Email</a>
+    <a class="btn" href="https://instagram.com/omar_kamal_8898">Instagram</a>
 
 </div>
+
+<button class="add-contact" onclick="addContact()">+</button>
 
 <script src="script.js"></script>
 
